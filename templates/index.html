@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MultiModal Health Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
+</head>
+<body class="bg-[#0d0d1a] text-white font-sans">
+
+  <!-- Navbar  chatgpt nai ha  tera liye -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-gray-900 border-b border-gray-800">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3">
+        <img src="../static/Logo.png" class="h-11" alt="Logo" />
+        <span class="text-2xl font-semibold text-white">MultiModal Health Analyzer</span>
+      </a>
+      <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+        <svg class="w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+        <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium">
+          <li><a href="#" class="block py-2 px-3 text-blue-500">Home</a></li>
+          <li class="relative">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center w-full py-2 px-3 text-white hover:text-blue-500">Daigonsis
+              <svg class="w-2.5 h-2.5 ml-2" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+            </button>
+            <!-- Dropdown -->
+            <div id="dropdownNavbar" class="hidden absolute mt-2 bg-gray-800 text-sm rounded-md shadow-lg w-44 z-10">
+              <ul class="py-2">
+                <li><a href="/braintumor1" class="block px-4 py-2 hover:bg-gray-700">Brain Tumor</a></li>
+                <li><a href="/alzheimer1" class="block px-4 py-2 hover:bg-gray-700">Alzheimer</a></li>
+                <li><a href="/diabetes1" class="block px-4 py-2 hover:bg-gray-700">Diabetes</a></li>
+                <li><a href="/pneumonia1" class="block px-4 py-2 hover:bg-gray-700">Pneumonia</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Heart Disease</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Symptoms Based</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#info" class="block py-2 px-3 text-white hover:text-blue-500">Info</a></li>
+          <li><a href="#developer" class="block py-2 px-3 text-white hover:text-blue-500">Developer</a></li>
+          <!-- <li><a href="#" class="block py-2 px-3 text-white hover:text-blue-500">Pricing</a></li> -->
+          <li><a href="#contact" class="block py-2 px-3 text-white hover:text-blue-500">Contact</a></li>
+          <li> <a href="/homepage" class="inline-block bg-red-600 hover:bg-green-500 text-white font-medium px-6 py-3 rounded-md transition">
+            <h1> Start 🩺</h1>
+           </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main desgin with image -->
+  <section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+      <!-- Image -->
+      <div class="w-full lg:w-1/2">
+        <img src="../static/home1.jpg" alt="Diagnosis Image" class="rounded-xl shadow-lg mx-auto" />
+      </div>
+      <!-- Text -->
+      <div class="w-full lg:w-1/2 text-white">
+        <h2 class="text-3xl font-bold mb-4">How to use ?</h2>
+        <p class="mb-6 text-gray-300 leading-relaxed">
+          This daigonsis website were you can get results by uploading X-ray, MRI, textual based data which can save so much time for doctor.
+        </p>
+        
+        <h3 class="uppercase text-sm font-semibold text-gray-400 mb-2 tracking-wide">What you'll get</h3>
+
+      <!-- how to use timeline    -->
+    <ol class="relative border-s border-gray-200 dark:border-gray-700">    
+
+    <!-- number1    -->
+    <li class="mb-10 ms-6">         
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 16 16">
+             <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"/>
+              </svg>
+        </span>
+
+        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Click on "Start" <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ms-3">Latest</span></h3>
+        <!-- <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on January 13th, 2022</time> -->
+        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Search the "Start" button below or at the nav bar.</p>
+    </li>
+
+    <!-- number2    -->
+    <li class="mb-10 ms-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle" viewBox="0 0 16 16">
+                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306"/>
+              </svg>
+        </span>
+        <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Choose the daigonsis</h3>
+        <!-- <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 7th, 2021</time> -->
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Choose the disease between
+            Brain Tumor,
+            Alzheimer,
+            Diabetes,
+            Pneumonia,
+            Heart Disease,
+            Symptoms Based.</p>
+    </li>
+
+    <!-- number3    -->
+    <li class="mb-10 ms-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-3-circle" viewBox="0 0 16 16">
+                <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318"/>
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+              </svg>
+        </span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Upload image</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+              <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+            </svg>
+          </div>
+          
+        <!-- <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 7th, 2021</time> -->
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">You can upload "jpg", "jpeg", "jfif", "pjpeg", "pjp", "png", "webp" format images and you can use drag and drop too.</p>
+    </li>
+
+    <!-- number4    -->
+    <li class="mb-10 ms-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-4-circle" viewBox="0 0 16 16">
+                <path d="M7.519 5.057q.33-.527.657-1.055h1.933v5.332h1.008v1.107H10.11V12H8.85v-1.559H4.978V9.322c.77-1.427 1.656-2.847 2.542-4.265ZM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218"/>
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+              </svg>
+        </span>
+        <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Enter "Daigonsis"</h3>
+        <!-- <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 2nd, 2021</time> -->
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Click Daigonsis and wait for result to preview. The preview page will show daigonsis and its types with key information.</p>
+    </li>
+
+</ol>
+
+        <a  href="/homepage" class="inline-block bg-red-600 hover:bg-green-500 text-white font-medium px-6 py-3 rounded-md transition">
+         <h1> Start 🩺</h1>
+        </a>
+
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- info sectino -->
+  <section  id = "info" class="scroll-mt-20 mt-8 mx-auto w-5/6 px-4">
+    <a href="#" class="block p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">
+        Project Information
+      </h5>
+      <p class="text-xl text-gray-700 dark:text-gray-400">
+        In this project, we developed a Multimodal health analyzer with a primary focus on analyzing X-ray images and providing disease predictions based on both visual data and manually input symptoms. The project utilized machine learning algorithms to train the system on X-ray datasets, enabling accurate detection of specific diseases. Additionally, a user-friendly interface was developed using Flask for easy interaction. As we move into the next phase of the project, MRI and CT scan analysis will be integrated, further enhancing the system's diagnostic capabilities.
+      </p>
+    </a>
+  </section>
+  
+  <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded-sm md:my-10 dark:bg-gray-700">
+
+  <!-- devloper section -->
+  <section id ="developer" class="scroll-mt-20 mt-10 mb-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col h-full">
+        <a href="#">
+            <img class="rounded-t-lg" src="../static/profile.png" alt="" />
+        </a>
+        <div class="p-5 flex flex-col flex-grow">
+            <a href="#">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bhavin Jain</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Proficient Frontend, and Backend with experience in creating responsive website and tools to enhance user
+                experience and performance with excellent problem solving skills aka World ka best leader.</p>
+            <div class="mt-auto">
+                <a href="https://www.linkedin.com/in/bhavin-jain-350161253/" target= "_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col h-full">
+        <a href="#">
+            <img class="rounded-t-lg" src="../static/profile.png" alt="" />
+        </a>
+        <div class="p-5 flex flex-col flex-grow">
+            <a href="#">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Yash Mehta</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Motivated and dedicated individual who enjoys Software Development. I am an eager learner who constantly
+                wants to upskill and hone my development skills. I enjoy DSA, Web Development, App Development and AI & ML.</p>
+            <div class="mt-auto">
+                <a href="https://www.linkedin.com/in/yash-h-mehta/" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col h-full">
+        <a href="#">
+            <img class="rounded-t-lg" src="../static/profile.png" alt="" />
+        </a>
+        <div class="p-5 flex flex-col flex-grow">
+            <a href="#">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Yash Khandelwal</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">no info</p>
+            <div class="mt-auto">
+                <a href="https://www.linkedin.com/in/yash-khandelwal-763311247/"  target="_blank"class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col h-full">
+        <a href="#">
+            <img class="rounded-t-lg" src="../static/profile.png" alt="" />
+        </a>
+        <div class="p-5 flex flex-col flex-grow">
+            <a href="#">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Deval Kaku</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">No info</p>
+            <div class="mt-auto">
+                <a href="https://www.linkedin.com/in/deval-kaku-55163725b/" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded-sm md:my-10 dark:bg-gray-700">
+
+  <!-- Contact wala part -->
+  <footer id = "contact" class="scroll-mt-20 mt-8 bg-gray-900 border-t border-gray-800 py-8">
+    <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 mb-4 md:mb-0">
+        <img src="../static/Logo.png" class="h-8" alt="Logo" />
+        <span class="text-xl font-semibold text-white">MultiModal Health Analyzer</span>
+      </a>
+      <ul class="flex flex-wrap items-center text-sm text-gray-400 space-x-6">
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="http://GitHub.com/yhm54/Salubritas" target="_blank" class="hover:underline">GitHub</a></li>
+        <li><a href="mailto:bhavinjain495@gmail.com" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-6">
+      © 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

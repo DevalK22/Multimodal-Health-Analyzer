@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MultiModal Health Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+  <script type="module" src="script.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .loader {
+    position: relative;
+    width: 120px;
+    height: 90px;
+    margin: 0 auto;
+  }
+
+  .loader:before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #2a9d8f;
+    animation: loading-bounce 0.5s ease-in-out infinite alternate;
+  }
+
+  .loader:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 7px;
+    width: 45px;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
+    animation: loading-step 1s ease-in-out infinite;
+  }
+
+  @keyframes loading-bounce {
+    0% { transform: scale(1, 0.7); }
+    40% { transform: scale(0.8, 1.2); }
+    60% { transform: scale(1, 1); }
+    100% { bottom: 140px; }
+  }
+
+  @keyframes loading-step {
+    0% {
+      box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+                  0 10px 0 #f2f2f2,
+                  -35px 50px 0 #f2f2f2,
+                  -70px 90px 0 #f2f2f2;
+    }
+    100% {
+      box-shadow: 0 10px 0 #f2f2f2,
+                  -35px 50px 0 #f2f2f2,
+                  -70px 90px 0 #f2f2f2,
+                  -70px 90px 0 rgba(0, 0, 0, 0);
+    }
+  }
+  </style>
+  
+</head>
+<body class="bg-[#0d0d1a] text-white font-sans">
+
+   
+  <!-- Navbar  chatgpt nai ha  tera liye -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-gray-900 border-b border-gray-800">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3">
+        <img src="../static/Logo.png" class="h-11" alt="Logo" />
+        <span class="text-2xl font-semibold text-white">MultiModal Health Analyzer</span>
+      </a>
+      <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+        <svg class="w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+        <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium">
+          <li><a href="/" class="block py-2 px-3 text-blue-500">Home</a></li>
+          <li class="relative">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center w-full py-2 px-3 text-white hover:text-blue-500">Daigonsis
+              <svg class="w-2.5 h-2.5 ml-2" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+            </button>
+            <!-- Dropdown -->
+            <div id="dropdownNavbar" class="hidden absolute mt-2 bg-gray-800 text-sm rounded-md shadow-lg w-44 z-10">
+              <ul class="py-2">
+                <li><a href="/braintumor1" class="block px-4 py-2 hover:bg-gray-700">Brain Tumor</a></li>
+                <li><a href="/alzheimer1" class="block px-4 py-2 hover:bg-gray-700">Alzheimer</a></li>
+                <li><a href="/diabetes1" class="block px-4 py-2 hover:bg-gray-700">Diabetes</a></li>
+                <li><a href="/pneumonia1" class="block px-4 py-2 hover:bg-gray-700">Pneumonia</a></li>
+                <!-- <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Heart Disease</a></li> -->
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Symptoms Based</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/#info" class="block py-2 px-3 text-white hover:text-blue-500">Info</a></li>
+          <li><a href="/#developer" class="block py-2 px-3 text-white hover:text-blue-500">Developer</a></li>
+          <!-- <li><a href="#" class="block py-2 px-3 text-white hover:text-blue-500">Pricing</a></li> -->
+          <li><a href="/#contact" class="block py-2 px-3 text-white hover:text-blue-500">Contact</a></li>
+          <li> <a href="/homepage" class="inline-block bg-red-600 hover:bg-green-500 text-white font-medium px-6 py-3 rounded-md transition">
+            <h1> Start 🩺</h1>
+           </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-26">
+  
+
+ <!-- Centering Container -->
+<!-- Heart Disease Detection Form -->
+<div class="min-h-screen flex items-center justify-center bg-gray-950">
+  <div class="w-full max-w-md bg-gray-900 rounded-lg p-9 shadow-lg">
+    <h2 class="text-white font-bold text-xl text-center">Heart Disease Detection</h2>
+
+    <form action="heartdisease" method="GET" enctype="multipart/form-data" class="mt-6 space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        
+        <div>
+          <label class="text-white text-sm" for="op">Old Peak</label>
+          <input type="number" min="0" step="any" name="op" id="op" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="text-white text-sm" for="mhra" >Max Heart Rate Achieved</label>
+          <input type="number" min="0"  step="any" name="mhra" id="mhra" required  class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="text-white text-sm" for="eia">Exercise Induced Angina</label>
+          <select name="eia" id="eia" required class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-white text-sm" for="nmv" >Number of Major Vessels</label>
+          <select name="nmv" id="nmv"" required class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-white text-sm" for="tcp" >Type of Chest Pain</label>
+          <select  name="tcp" id="tcp" required class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1">
+            <option value="">Select</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-white text-sm" for="age">Age</label>
+          <input type="number" min="0" required id="age" name="age" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" />
+        </div>
+
+        <div>
+          <label class="text-white text-sm" for="thal">Thal</label>
+          <select id="thal" name="thal" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1">
+            <option value="">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center pt-4">
+        <button class="bg-white text-black rounded-md px-6 py-2 hover:bg-blue-500 hover:text-white transition-all duration-200" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Loader overlay -->
+<div id="loader-overlay" class="fixed inset-0 bg-slate-950 bg-opacity-80 flex justify-center items-center z-50 hidden">
+  <div class="loader"></div>
+</div>
+
+
+</main>
+</body>
+<!-- <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded-sm md:my-10 dark:bg-gray-700"> -->
+
+  <!-- Contact wala part -->
+  <footer id = "contact" class="scroll-mt-20  bg-gray-900 border-t border-gray-800 py-8">
+    <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 mb-4 md:mb-0">
+        <img src="../static/Logo.png" class="h-8" alt="Logo" />
+        <span class="text-xl font-semibold text-white">MultiModal Health Analyzer</span>
+      </a>
+      <ul class="flex flex-wrap items-center text-sm text-gray-400 space-x-6">
+        <li><a href="#" class="hover:underline">About</a></li>
+        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="http://GitHub.com/yhm54/Salubritas" target="_blank" class="hover:underline">GitHub</a></li>
+        <li><a href="mailto:bhavinjain495@gmail.com" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-6">
+      © 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function () {
+      document.getElementById('loader-overlay').classList.remove('hidden');
+    });
+    window.addEventListener('pageshow', function () {
+  document.getElementById('loader-overlay').classList.add('hidden');
+});
+  </script>
+  
+</body>
+</html>
